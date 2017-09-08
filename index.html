@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+	#head{
+		text-align:center;
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+	}
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3 id="head">HACK4GOOD</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 12.917269, lng: 77.622753};
+		//var uluru2 ={lat: -24,lng:130};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+		
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa-XiOfYNqBHBvkMrSFQxanwgXoYZmulw&callback=initMap">
+    </script>
+  </body>
+</html>
