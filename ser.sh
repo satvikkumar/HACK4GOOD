@@ -1,15 +1,41 @@
-#!/bin/bash
+##!/usr/bin/expect
 
-while true
+set prompt {\$ $}    ; # this is a regular expression that should match the
+                       # *end* of you bash prompt. Alter it as required.
+spawn lftp
 
-do
+expect "lftp :~> "
+send "set ssl:verify-certificate no\r"
+expect "lftp :~> "
+send "lftp ftp://epiz_20655524@ftp.epizy.com\r"
+expect "Password: "
+send "Saps007\r"
+expect "lftp epiz_20655524@ftp.epizy.com:~> "
+send "cd htdocs/images\r"
+expect "lftp epiz_20655524@ftp.epizy.com:/htdocs/images> "
+send "put /home/satvik/yolo-9000/darknet/data/image.jpg\r"
 
-cd /home/satvik/yolo-9000/darknet
-   
-./darknet detector test cfg/combine9k.data cfg/yolo9000.cfg ../yolo9000-weights/yolo9000.weights /home/satvik/image.jpg > /home/satvik/data.txt
+spawn bash
+expect "satvik@pes:~$ "
+send "cd /home/satvik/yolo-9000/darknet\r"
+expect "satvik@pes:~$ "
+send "./darknet detector test cfg/combine9k.data cfg/yolo9000.cfg ../yolo9000-weights/yolo9000.weights /home/satvik/yolo-9000/darknet/data/horses.jpg > /home/satvik/data.txt\r"
+expect "satvik@pes:~$ "
+send "grep -c '\<\(bus\|car\)\>' /home/satvik/data.txt > /home/satvik/num.txt\r"
+ 
+spawn lftp
 
-grep -c '\<\(bus\|car\)\>' /home/satvik/data.txt > /home/satvik/num.txt
+expect "lftp :~> "
+send "set ssl:verify-certificate no\r"
+expect "lftp :~> "
+send "lftp ftp://epiz_20655524@ftp.epizy.com\r"
+expect "Password: "
+send "Saps007\r"
+expect "lftp epiz_20655524@ftp.epizy.com:~> "
+send "cd htdocs/data\r"
+expect "lftp epiz_20655524@ftp.epizy.com:/htdocs/data> "
+send "put /home/satvik/num.txt\r"
+expect "lftp epiz_20655524@ftp.epizy.com:/htdocs/data> "
+send "exit"
 
-  sleep 5
-
-done
+expect eof
