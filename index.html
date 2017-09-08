@@ -23,10 +23,50 @@
           zoom: 14,
           center: uluru
         });
-        var marker = new google.maps.Marker({
+		var density=0;
+		var denseicon = {
+		url: 'http://maps.google.com/mapfiles/kml/shapes/caution.png', // url
+		scaledSize: new google.maps.Size(50, 50) // scaled size
+		};
+		if (!density)
+		{
+		  var marker1 = new google.maps.Marker({
           position: uluru,
-          map: map
+		  icon:denseicon,
+          map: map,
+		  title : 'SILK BOARD JUNCTION'
         });
+		  
+		var infowindow = new google.maps.InfoWindow({
+          content: '<div style="text-align:center;color:#e22f0f;"><b>TRAFFIC CONGESTED !</b></div>'
+        });
+		  marker1.addListener('mouseover', function() {
+          infowindow.open(map, marker1);
+        });
+		marker1.addListener('mouseout', function(event) {
+		infowindow.close(map, marker1);
+		});
+		}
+		else
+		{
+        var marker1 = new google.maps.Marker({
+          position: uluru,
+          map: map,
+		  title : 'SILK BOARD JUNCTION'
+        });
+		var infowindow = new google.maps.InfoWindow({
+          content: '<div style="text-align:center;color:#15ed0e;"><b>TRAFFIC PEACEFUL :)</b></div>'
+        });
+		 marker1.addListener('hover', function() {
+          infowindow.open(map, marker1);
+        });
+		marker1.addListener('mouseout', function(event) {
+		infowindow.open(map, marker1);
+		});
+		
+		}
+		
+		
 		
       }
     </script>
