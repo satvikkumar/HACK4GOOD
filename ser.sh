@@ -1,7 +1,6 @@
 ##!/usr/bin/expect
 
-set prompt {\$ $}    ; # this is a regular expression that should match the
-                       # *end* of you bash prompt. Alter it as required.
+set prompt {\$ $};
 spawn lftp
 
 expect "lftp :~> "
