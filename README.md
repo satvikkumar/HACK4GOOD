@@ -1,6 +1,6 @@
 # HACK4GOOD
 RVCE Hackathon 
-
+Problem Statement :- to have live traffic re-direction via street cams and image processing
 
 ReciverArdu :- For NRF (long range communication) b/w the signal and Ambulance (still in progress)
 
