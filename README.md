@@ -9,7 +9,7 @@ With the help of image processing , machine learning , IOT and cloud computing ,
 
 ReciverArdu.py :- For NRF (long range communication) b/w the signal and Ambulance . 
 
-Index.html :- map gui interface showing live images of traffic junction
+Index.html :- map gui interface showing live images of traffic junction with predicted traffic densities 
 
 pi.sh :- takes the image of the traffic and sends it to cloud server (PESU in this case) and gets processed data from server , sends it to pi for sequencing of signal
 
