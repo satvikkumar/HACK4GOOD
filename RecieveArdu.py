@@ -23,18 +23,24 @@ radio.openReadingPipe(1, pipes[1])
 radio.printDetails()
 radio.startListening()
 
-while(1):
+result = True
+while(result):
     # ackPL = [1]
     while not radio.available(0):
         time.sleep(1 / 100)
     receivedMessage = []
     radio.read(receivedMessage, radio.getDynamicPayloadSize())
-    print("Received: {}".format(receivedMessage))
+    #print("Received: {}".format(receivedMessage))
 
-    print("Translating the receivedMessage into unicode characters")
+    #print("Translating the receivedMessage into unicode characters")
     string = ""
     for n in receivedMessage:
         # Decode into standard unicode set
-        if (n &gt;= 32 and n &lt;= 126):
+        if (n &gt>= 32 and n &lt<= 126):
             string += chr(n)
-    print("Out received message decodes to: {}".format(string))
+        if(len(string)==18): # "Incoming Ambulance"
+            redirect();
+        result = false
+ end
+            
+    
