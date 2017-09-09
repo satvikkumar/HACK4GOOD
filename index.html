@@ -16,60 +16,120 @@
     <h3 id="head">HACK4GOOD</h3>
     <div id="map"></div>
     <script>
+	
       function initMap() {
-        var uluru = {lat: 12.917269, lng: 77.622753};
+		var divimg=document.getElementById('images');
+        var uluru1 = {lat: 12.917269, lng: 77.622753};
+		var uluru2= {lat:12.915955,lng:77.614932};
+		var uluru3= {lat:12.915369,lng:77.638450};
 		//var uluru2 ={lat: -24,lng:130};
-        var map = new google.maps.Map(document.getElementById('map'), {
+		var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
-          center: uluru
+          center: uluru1
         });
-		var density=0;
+		var density=0//<?php echo $content; ?>;
 		var denseicon = {
 		url: 'http://maps.google.com/mapfiles/kml/shapes/caution.png', // url
 		scaledSize: new google.maps.Size(50, 50) // scaled size
 		};
+		var peaceicon = {
+		url:'http://maps.google.com/mapfiles/kml/paddle/go.png',
+		scaledSize: new google.maps.Size(50, 50) 
+		};
 		if (!density)
 		{
 		  var marker1 = new google.maps.Marker({
-          position: uluru,
+          position: uluru1	,
 		  icon:denseicon,
           map: map,
 		  title : 'SILK BOARD JUNCTION'
-        });
+			});
 		  
 		var infowindow = new google.maps.InfoWindow({
           content: '<div style="text-align:center;color:#e22f0f;"><b>TRAFFIC CONGESTED !</b></div>'
-        });
+			});
 		  marker1.addListener('mouseover', function() {
           infowindow.open(map, marker1);
-        });
+			});
 		marker1.addListener('mouseout', function(event) {
 		infowindow.close(map, marker1);
-		});
+			});
 		}
 		else
 		{
         var marker1 = new google.maps.Marker({
-          position: uluru,
+          position: uluru1,
+		  icon:peaceicon,
           map: map,
 		  title : 'SILK BOARD JUNCTION'
         });
 		var infowindow = new google.maps.InfoWindow({
           content: '<div style="text-align:center;color:#15ed0e;"><b>TRAFFIC PEACEFUL :)</b></div>'
         });
-		 marker1.addListener('hover', function() {
+		 marker1.addListener('mouseover', function() {
           infowindow.open(map, marker1);
         });
 		marker1.addListener('mouseout', function(event) {
-		infowindow.open(map, marker1);
+		infowindow.close(map, marker1);
 		});
 		
 		}
+	{
 		
+			var marker2=new google.maps.Marker({
+          position: uluru2,
+		  icon:peaceicon,
+          map: map,
+		  title : 'Junction 2'
+			});
+			var infowindow1 = new google.maps.InfoWindow({
+			content: '<div style="text-align:center;color:#15ed0e;"><b>TRAFFIC PEACEFUL :)</b></div>'
+			});
+			marker2.addListener('mouseover', function() {
+			infowindow1.open(map, marker2);
+			});
+			marker2.addListener('mouseout', function(event) {
+			infowindow1.close(map, marker2);
+			});
+		
+			var marker3=new google.maps.Marker({
+          position: uluru3,
+		  icon:peaceicon,
+          map: map,
+		  title : 'Junction 3'
+			});
+			var infowindow2 = new google.maps.InfoWindow({
+			content: '<div style="text-align:center;color:#15ed0e;"><b>TRAFFIC PEACEFUL :)</b></div>'
+			});
+			marker3.addListener('mouseover', function() {
+			infowindow2.open(map, marker3);
+			});
+			marker3.addListener('mouseout', function(event) {
+			infowindow2.close(map, marker3);
+			});
+			
+	}
+		marker1.addListener('click', function(event) {
+		var img=document.createElement("img");
+		divimg.appendChild(img);
+		img.src="images/image.jpg";
+		img.style="width:50%;height:300px;";
+		
+			
+			
+			});
 		
 		
       }
     </script>
+	<div id="images">
+		
+	</div>
+	<div id="plot">
+	<?php
+		
+	?>
+	</div>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa-XiOfYNqBHBvkMrSFQxanwgXoYZmulw&callback=initMap">
     </script>
