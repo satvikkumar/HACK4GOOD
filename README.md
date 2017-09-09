@@ -9,7 +9,7 @@ With the help of image processing , machine learning , IOT and cloud computing ,
 
 ReciverArdu.py :- For NRF (long range communication) b/w the signal and Ambulance . 
 
-Index.html :- map gui interface showing live images of traffic junction with predicted traffic densities 
+index.php :- map gui interface showing live images of traffic junction with predicted traffic densities 
 
 pi.sh :- takes the image of the traffic and sends it to cloud server (PESU in this case) and gets processed data from server , sends it to pi for sequencing of signal
 
@@ -19,4 +19,4 @@ traffic_light.ino :- the sequence we plan to use for normal operation , yet to d
 
 Pi1.py :- Meant for the dynamic operation of the signal based on vehichle density
 
-Sequence.py :- Finds the Maximum Density of the 4 roads at that signal junction.
+seq.py :- Finds the Maximum Density of the 4 roads at that signal junction.
