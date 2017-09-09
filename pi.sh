@@ -27,10 +27,10 @@ expect "sftp>"
 send "put /home/pi/image1.jpg\n"
 expect "sftp>"
 send "put /home/pi/image2.jpg\n"
-expect "sftp>"
-send "get /home/pi/seq.txt\n"
 
+spawn bash
 expect -re $prompt
+send "python3 seq.py < num.txt > seq.txt"
 send "python3 Pi1.py < seq.txt\r"
 
 expect eof
