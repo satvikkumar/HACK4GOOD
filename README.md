@@ -18,3 +18,5 @@ ser.sh :- takes the image from pi , detects the density of vehicles , process th
 traffic_light.ino :- the sequence we plan to use for normal operation , yet to design dynamic operation signal sequencing
 
 Pi1.py :- Meant for the dynamic operation of the signal based on vehichle density
+
+Sequence.py :- Finds the Maximum Density of the 4 roads at that signal junction.
