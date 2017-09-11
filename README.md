@@ -1,6 +1,4 @@
 # HACK4GOOD
-RVCE Hackathon 
-Problem Statement :- To have live traffic re-direction via street cams and image processing
 
 With the ever increasing number of vehicles on the road , traditional methods of traffic signals fail to serve the need to avoid traffic congestion and effective flow.
 Thus , our project aims at providing a solution to this exponential problem.
