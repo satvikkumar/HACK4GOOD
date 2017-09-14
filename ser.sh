@@ -5,27 +5,27 @@ set prompt {\$ $};
 
 spawn bash
 expect "satvik@pes:~$ "
-send "cd /home/satvik/yolo-9000/darknet\r"
+send "cd /home/satvik/darknet\r"
 
 expect "satvik@pes:~$ "
-send "./darknet detector test cfg/combine9k.data cfg/yolo9000.cfg ../yolo9000-weights/yolo9000.weights /home/satvik/yolo-9000/darknet/data/image1.jpg > /home/satvik/data1.txt\r"
+send "./darknet detector test cfg/coco.data cfg/yolo.cfg yolo.weights data/image1.jpg
 expect "satvik@pes:~$ "
-send "cp /home/satvik/yolo-9000/darknet/predictions.png /home/satvik/predictions1.png\r"
+send "cp /home/satvik/darknet/predictions.png /home/satvik/predictions1.png\r"
 
 expect "satvik@pes:~$ "
-send "./darknet detector test cfg/combine9k.data cfg/yolo9000.cfg ../yolo9000-weights/yolo9000.weights /home/satvik/yolo-9000/darknet/data/image2.jpg > /home/satvik/data2.txt\r"
+send "./darknet detector test cfg/coco.data cfg/yolo.cfg yolo.weights data/image2.jpg
 expect "satvik@pes:~$ "
-send "cp /home/satvik/yolo-9000/darknet/predictions.png /home/satvik/predictions2.png\r"
+send "cp /home/satvik/darknet/predictions.png /home/satvik/predictions2.png\r"
 
 expect "satvik@pes:~$ "
-send "./darknet detector test cfg/combine9k.data cfg/yolo9000.cfg ../yolo9000-weights/yolo9000.weights /home/satvik/yolo-9000/darknet/data/image3.jpg > /home/satvik/data3.txt\r"
+send "./darknet detector test cfg/coco.data cfg/yolo.cfg yolo.weights data/image3.jpg
 expect "satvik@pes:~$ "
-send "cp /home/satvik/yolo-9000/darknet/predictions.png /home/satvik/predictions3.png\r"
+send "cp /home/satvik/darknet/predictions.png /home/satvik/predictions3.png\r"
 
 expect "satvik@pes:~$ "
-send "./darknet detector test cfg/combine9k.data cfg/yolo9000.cfg ../yolo9000-weights/yolo9000.weights /home/satvik/yolo-9000/darknet/data/image4.jpg > /home/satvik/data4.txt\r"
+send "./darknet detector test cfg/coco.data cfg/yolo.cfg yolo.weights data/image4.jpg
 expect "satvik@pes:~$ "
-send "cp /home/satvik/yolo-9000/darknet/predictions.png /home/satvik/predictions4.png\r"
+send "cp /home/satvik/darknet/predictions.png /home/satvik/predictions4.png\r"
 
 expect "satvik@pes:~$ "
 send "grep -c '\<\(bus\|car\)\>' /home/satvik/data1.txt > /home/satvik/num.txt\r"
