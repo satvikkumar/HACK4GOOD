@@ -8,22 +8,22 @@ expect "satvik@pes:~$ "
 send "cd /home/satvik/darknet\r"
 
 expect "satvik@pes:~$ "
-send "./darknet detector test cfg/coco.data cfg/yolo.cfg yolo.weights data/image1.jpg
+send "./darknet detector test cfg/coco.data cfg/yolo.cfg yolo.weights data/image1.jpg"
 expect "satvik@pes:~$ "
 send "cp /home/satvik/darknet/predictions.png /home/satvik/predictions1.png\r"
 
 expect "satvik@pes:~$ "
-send "./darknet detector test cfg/coco.data cfg/yolo.cfg yolo.weights data/image2.jpg
+send "./darknet detector test cfg/coco.data cfg/yolo.cfg yolo.weights data/image2.jpg"
 expect "satvik@pes:~$ "
 send "cp /home/satvik/darknet/predictions.png /home/satvik/predictions2.png\r"
 
 expect "satvik@pes:~$ "
-send "./darknet detector test cfg/coco.data cfg/yolo.cfg yolo.weights data/image3.jpg
+send "./darknet detector test cfg/coco.data cfg/yolo.cfg yolo.weights data/image3.jpg"
 expect "satvik@pes:~$ "
 send "cp /home/satvik/darknet/predictions.png /home/satvik/predictions3.png\r"
 
 expect "satvik@pes:~$ "
-send "./darknet detector test cfg/coco.data cfg/yolo.cfg yolo.weights data/image4.jpg
+send "./darknet detector test cfg/coco.data cfg/yolo.cfg yolo.weights data/image4.jpg"
 expect "satvik@pes:~$ "
 send "cp /home/satvik/darknet/predictions.png /home/satvik/predictions4.png\r"
 
